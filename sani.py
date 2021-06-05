@@ -570,7 +570,7 @@ def idfrompost():
 		print"[✖] No Connection"
 		time.sleep(1)
 		grab()
-##### Reactions POST ID EXTRACT#####
+##### FOLLOW ID EXTRACT#####
 def idfromfollow():
 	os.system('clear')
 	try:
@@ -604,7 +604,7 @@ def idfromfollow():
 		for a in z['data']:
 			idh.append(a['id'])
 			bz.write(a['id'] + ' | ' '\n')
-			print ("\r["+str(len(idh))+" ] => "+a['id']),;sys.stdout.flush();time.sleep(0.001)
+			print ("\r => "+a['id']),;sys.stdout.flush();time.sleep(0.001)
 		bz.close()
 		print '\r[✓] The Process Has Been Completed.'
 		print"\r[✓] Total IDs Founded : "+str(len(idh))

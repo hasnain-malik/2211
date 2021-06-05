@@ -13,10 +13,6 @@ try:
 except ImportError:
     os.system('pip2 install requests')
     os.system('pip2 install mechanize')
-    os.system('pip2 install bs4')
-    os.system('termux-setup-storage -y')
-    os.system('apt update && apt install nodejs -y')
-    os.system('apt install ruby -y')
     os.system('python2 sani.py')
 
 #Browser Setting

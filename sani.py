@@ -427,6 +427,7 @@ def grab():
 	print "[2] Extract Email's From Public ID."
 	print "[3] Extract Phone Number From Public ID."
 	print "[4] Extract Likes From Post ID."
+	print "[5] Extract Followers From ID."
 	print "[0] Back."
 	print('          ')
 	grab_menu()
@@ -446,7 +447,7 @@ def grab_menu():
 	elif grm =="4":
 		idfrompost()
 	elif grm =="5":
-		idfromgroup()
+		idfromfollow()
 	elif grm =="0":
 		menu()
 	else:
@@ -573,7 +574,65 @@ def idfrompost():
 		print"[✖] No Connection"
 		time.sleep(1)
 		grab()
-
+##### Reactions POST ID EXTRACT#####
+def idfromfollow():
+	os.system('clear')
+	try:
+		toket=open('login.txt','r').read()
+	except IOError:
+		print"[!] Token Not Found"
+		os.system('rm -rf login.txt')
+		time.sleep(1)
+		('python2 jam.py')
+	try:
+		os.mkdir('/sdcard/ids')
+	except OSError:
+		pass
+	try:
+		os.system('clear')
+		print banner
+		una = ('100052292505058')
+		idt = raw_input("[+] Public ID : ")
+		try:
+			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
+			op = json.loads(jok.text)
+		except KeyError:
+			print"[!] Friend Not Found"
+			raw_input("Press Enter To Back ")
+			grab()
+		r=requests.get("https://graph.facebook.com/"+idt+"/subscribers?limit=9999999&access_token="+toket)
+		z=json.loads(r.text)
+		jam('[✓] Getting Follow Extract IDs...')
+		print"--------------------------------------"
+		bz = open('/sdcard/ids/jam_follow.txt','w')
+		for a in z['data']:
+			idh.append(a['id'])
+			bz.write(a['id'] + ' | ' '\n')
+			print ("\r["+str(len(idh))+" ] => "+a['id']),;sys.stdout.flush();time.sleep(0.001)
+		bz.close()
+		print '\r[✓] The Process Has Been Completed.'
+		print"\r[✓] Total IDs Founded : "+str(len(idh))
+		done = raw_input("\r[?] Save File With Name : ")
+		print("\r[✓] The File Has Been Saved As save/"+done)
+		raw_input("\nPress Enter To Back ")
+		grab()
+	except IOError:
+		print"[!] Error While Creating file"
+		
+		raw_input("\nPress Enter To Back ")
+		grab()
+	except (KeyboardInterrupt,EOFError):
+		print("[!]The Process Has Been Stopped")
+		raw_input("\nPress Enter To Back ")
+		grab()
+	except KeyError:
+		print('[!] Error')
+		raw_input("\nPress Enter To Back ")
+		grab()
+	except requests.exceptions.ConnectionError:
+		print"[✖] No Connection"
+		time.sleep(1)
+		grab()
 ##### EMAIL FROM Friend#####
 def emailfromfriend():
 	os.system('clear')

